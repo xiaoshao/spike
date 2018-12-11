@@ -1,0 +1,15 @@
+server:
+  port: 8081
+eureka:
+  instance:
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health
+  client:
+    enabled: true
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:9999/eureka/
+spring:
+  application:
+    name: feign-server

@@ -16,5 +16,6 @@
         <module>metrics-demo</module>
         <module>pinpoint-test</module>
         <module>etcd-study</module>
+        <module>spring-boot-feign-client</module>
     </modules>
 </project>
