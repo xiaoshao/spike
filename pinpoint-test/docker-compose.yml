@@ -1,0 +1,25 @@
+version: '3'
+
+volumes:
+  output:
+
+services:
+  web:
+    build:
+      context: service
+      dockerfile: ./dockerfile
+    volumes:
+      - ./agent:/opt/agent
+      - output:/paas-apm/collectors/pinpoint:rw
+
+  test:
+    build:
+      context: test
+      dockerfile: ./dockerfile
+    depends_on:
+      - web
+    volumes:
+      - output:/paas-apm/collectors/pinpoint:ro
+#    volumes-from:
+#      - web:/opt/web:ro
+

@@ -1,0 +1,7 @@
+FROM xiaoshao/hw-jdk8
+
+RUN mkdir -p /opt/app
+
+ADD target/service-*.jar /opt/app/service.jar
+
+CMD ["java", "-jar", "/opt/app/service.jar"]
